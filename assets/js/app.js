@@ -1,11 +1,8 @@
-import Vue from 'vue'
-import {MDCRipple} from './setup/MaterialComponentJS.js';
-
-const ripple = new MDCRipple(document.querySelector('.foo-button'));
+import Vue from 'vue';
 
 require('./setup/bootstrap.js');
 
-console.log('starting vue, fen says');
+console.log('wordpress started, starting vue, fen says');
 
 //import vue
 window.Vue = require('vue');
@@ -18,8 +15,6 @@ Vue.prototype.$_window = window;
 /**
  * Load components, launch Vue and set up nav bar
  */
-
-// require('./system/loader');
 
 /**
  * Startup Vue
