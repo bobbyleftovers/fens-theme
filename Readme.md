@@ -1,28 +1,9 @@
-{
-  "private": true,
-  "scripts": {
-      "dev": "npm run development",
-      "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-      "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-      "watch-poll": "npm run watch -- --watch-poll",
-      "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-      "prod": "npm run production",
-      "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-  },
-  "devDependencies": {
-      "axios": "^0.17",
-      "cross-env": "^5.2.0",
-      "jquery": "^3.3.1",
-      "laravel-mix": "^2.1.14",
-      "lodash": "^4.17.11",
-      "vue": "^2.5.17"
-  },
-  "dependencies": {
-      "ajv": "^6.5.4",
-      "buefy": "^0.6.7",
-      "bulma": "^0.7.1",
-      "moment": "^2.22.2",
-      "vue-loader": "^14.2.3",
-      "vue-template-compiler": "^2.5.17"
-  }
-}
+#Fen's Theme
+## Vue.js, Material components, and Webpack
+
+### Setup:
+Colne or download this repo, then run this command to install dependencies:
+`npm install`
+After that finishes, start the build process using `npm start`
+
+### Where stuff goes
