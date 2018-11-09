@@ -1,10 +1,7 @@
 const autoprefixer = require('autoprefixer');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const VueLoader = require('vue-loader');
 const path = require('path');
-// const { mix } = require('laravel-mix');
-
-// mix.js('assets/js/app.js', './');
-//    .sass('sass/style.scss', './');
 
 module.exports = {
     entry: ['./assets/sass/app.scss', './assets/js/app.js'],
@@ -54,10 +51,31 @@ module.exports = {
         {
             test: /\.vue$/,
             loader: 'vue-loader',
-        }
+        },
+        {
+            test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'fonts/'
+                }
+            }]
+        },
+        {
+            test: /\.(gif|png|jpe?g|svg)$/i,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'images/'
+                }
+            }]
+          }
         ],
     },
     plugins: [
+        new VueLoader.VueLoaderPlugin(),
         new WebpackNotifierPlugin({
             contentImage: path.join(__dirname, 'webpack-logo.png'),
             title: 'Fen Says',
