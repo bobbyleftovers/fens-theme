@@ -4,7 +4,7 @@ function wc_rest_payment_endpoints() {
     /**
      * Handle Payment Method request.
      */
-    register_rest_route( 'wc/v2', 'payment', array(
+    register_rest_route( 'wc/v3', 'payment', array(
         'methods'  => 'POST',
         'callback' => 'wc_rest_payment_endpoint_handler',
     ) );

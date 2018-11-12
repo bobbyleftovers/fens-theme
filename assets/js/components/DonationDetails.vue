@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <form @submit.prevent="setDonor">
+        <form @submit.prevent="placeOrder">
             <div class="step-content" id="step-c2">
 
                 <input type="hidden" v-model="donor.donation"/>
@@ -101,7 +101,7 @@
                         <input type="number" id="zip" v-model="donor.zip" placeholder="20500">
                     </div>
                 </div>
-
+                
                 <div class="form-group">
                     <h2 class="blue">Payment Information</h2>
                     <div class="form-item">
@@ -120,7 +120,7 @@
 
                 <div id="confirmation">
                     <h2 class="blue">Confirmation</h2>
-                    <p>Your card will be charged <span id="frequency" class="bold">once</span> in the amount of <span class="bold"><span class="amount">{{donation.amount | currency}}</span></span></p>
+                    <p>Your card will be charged <span id="frequency" class="bold">once</span> in the amount of <span class="bold"><span class="amount">{{donor.donation.amount | currency}}</span></span></p>
                     <p class="legal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis congue erat.</p>
                 </div>
 
@@ -128,11 +128,12 @@
 
             <div class="step-action" id="step-a2">
                 <router-link to="/" class="button btn-grey" id="step-a2-back">Back</router-link>
-                <router-link to="thanks" class="button btn-red" @disabled="!formValid" id="step-a2-next">Donate <span class="amount">{{donation.amount | currency}}</span></router-link>
+                <button v-bind:click="placeOrder" class="button btn-red" @disabled="!formValid" id="step-a2-next">Donate {{donor.donation.amount | currency}}</button>
             </div>
         </form> 
 
     </div><!-- /.main -->
+
 </template>
 
 <script>
@@ -161,10 +162,21 @@
                         cvv: null
                     }
                 }
-                
             }
         },
-        methods: {},
+        methods: {
+            placeOrder: function() {
+                const url = 'http://bpc-support.localhost/wp-json/wc/v2/products';
+                console.log('PLACE ORDER');
+                axios.get(url)
+                    .then(res => {
+                        console.log('ROUTES: ',res.data);
+                    })   
+                    .catch(err => {
+                        console.log('ERROR: ',err);
+                    });
+            }
+        },
         computed: {
             formValid: function() {
                 return false;

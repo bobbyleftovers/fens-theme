@@ -36,7 +36,7 @@ Vue.prototype.$_window = window;
  * Startup Vue
  */
 
- require('./setup/main.js');
+//  require('./setup/main.js');
 
 const app = new Vue({
     el: '#app',
