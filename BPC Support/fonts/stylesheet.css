@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'NewsGoth BT';
+    src: url('NewsGothicBT-Roman.eot');
+    src: url('NewsGothicBT-Roman.eot?#iefix') format('embedded-opentype'),
+        url('NewsGothicBT-Roman.woff2') format('woff2'),
+        url('NewsGothicBT-Roman.woff') format('woff'),
+        url('NewsGothicBT-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    src: url('CrimsonText-SemiboldItalic.eot');
+    src: url('CrimsonText-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('CrimsonText-SemiboldItalic.woff2') format('woff2'),
+        url('CrimsonText-SemiboldItalic.woff') format('woff'),
+        url('CrimsonText-SemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'News Gothic Std';
+    src: url('NewsGothicStd-Bold.eot');
+    src: url('NewsGothicStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('NewsGothicStd-Bold.woff2') format('woff2'),
+        url('NewsGothicStd-Bold.woff') format('woff'),
+        url('NewsGothicStd-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+

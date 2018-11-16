@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'NewsGoth BT';
+    src: url('../fonts/NewsGothicBT-Roman.eot');
+    src: url('../fonts/NewsGothicBT-Roman.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/NewsGothicBT-Roman.woff2') format('woff2'),
+        url('../fonts/NewsGothicBT-Roman.woff') format('woff'),
+        url('../fonts/NewsGothicBT-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    src: url('../fonts/CrimsonText-SemiboldItalic.eot');
+    src: url('../fonts/CrimsonText-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/CrimsonText-SemiboldItalic.woff2') format('woff2'),
+        url('../fonts/CrimsonText-SemiboldItalic.woff') format('woff'),
+        url('../fonts/CrimsonText-SemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'News Gothic Std';
+    src: url('../fonts/NewsGothicStd-Bold.eot');
+    src: url('../fonts/NewsGothicStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/NewsGothicStd-Bold.woff2') format('woff2'),
+        url('../fonts/NewsGothicStd-Bold.woff') format('woff'),
+        url('../fonts/NewsGothicStd-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, i {margin: 0;}
+
+body {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    color: $dgrey;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-family: $bold;
+    font-size: 1.75rem;
+    line-height: 2rem;
+}
+
+h2 {
+    font-family: $italic;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
+
+p, a {
+    font-family: $regular;
+    font-size: .9rem;
+    letter-spacing: -.02rem;
+}
