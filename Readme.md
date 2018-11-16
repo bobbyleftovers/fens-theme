@@ -7,6 +7,6 @@ Clone or download this repo, then open a terminal and navigate to the themes roo
 This theme is a lot like sage 8 with the exception that it's js assets have been updated to use es6 tools. I've also added Carbon Fields as a composer dependency for the theme. Vue.js is built in as well bbut it isn't required to use it.
 
 ### Links
-- [JS dependencies all use node.js](https://nodejs.org)
-- [PHP dependencies: ](https://getcomposer.org/)
-- [CSS framework is Bulma: ](https://bulma.io/)
+- [JS dependencies all use node.js: https://nodejs.org](https://nodejs.org)
+- [PHP dependencies use composer: https://getcomposer.org/](https://getcomposer.org/)
+- [CSS framework is Bulma: https://bulma.io/](https://bulma.io/)
