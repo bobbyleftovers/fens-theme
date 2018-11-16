@@ -18,17 +18,21 @@ use Roots\Sage\Wrapper;
     <?php do_action('get_header');?>
     
     <div id="app" class="container" role="document">
-        <main id="main">
-
-            <div id="main-header">
-                <img src="<?= get_template_directory_uri() ?>/assets/images/bpc-logo.svg" alt="BPC Logo">
-            </div>
-            
-            <router-view />
-
+        <main id="main"><?php
+            /* if(is_home() || is_page('details') || is_page('thanks')){
+              // use vue ?>
+              <div id="main-header">
+                  <img src="<?= get_template_directory_uri() ?>/assets/images/bpc-logo.svg" alt="BPC Logo">
+              </div>
+              
+              <router-view /><?php
+            // } else {*/
+              // use standard sage wp
+              include Wrapper\template_path();
+            // }?>
         </main>
 
-        <?php include Wrapper\template_path(); ?>
+        
       
     </div><!-- /.wrap -->
     <?php
