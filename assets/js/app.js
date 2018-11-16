@@ -1,43 +1,21 @@
-import Vue from 'vue';
-import VueCurrencyFilter from 'vue-currency-filter';
-import router from './setup/router';
-import store from './setup/store';
+// import external dependencies
+import 'jquery';
 
-Vue.use(VueCurrencyFilter,{
-    symbol : '$',
-    thousandsSeparator: ',',
-    fractionCount: 0,
-    fractionSeparator: '.',
-    symbolPosition: 'front',
-    symbolSpacing: false
+// import local dependencies
+import Router from './util/Router';
+import common from './routes/common';
+import home from './routes/home';
+import aboutUs from './routes/about';
+
+/** Populate Router instance with DOM routes */
+const routes = new Router({
+  // All pages
+  common,
+  // Home page
+  home,
+  // About Us page, note the change from about-us to aboutUs.
+  aboutUs,
 });
 
-
-//LoDash cuse it awesome
-window._ = require('lodash');
-
-/**
- * AXIOS
- */
-
-window.axios = require('axios');
-
-// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-//import vue
-window.Vue = require('vue');
-
-//Bus for emits and ons
-window.Bus = new Vue();
-
-Vue.prototype.$_window = window;
-
-/**
- * Startup Vue
- */
-
-const app = new Vue({
-    el: '#app',
-    router,
-    store
-});
+// Load Events
+jQuery(document).ready(() => routes.loadEvents());

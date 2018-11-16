@@ -10,7 +10,6 @@
  */
 
 use Carbon_Fields\Container;
-use Carbon_Fields\Field;
 
 // start carbon fields
 add_action( 'after_setup_theme', 'crb_load' );
@@ -20,11 +19,14 @@ function crb_load() {
 }
 
 $fen_includes = [
+  'lib/carbon/fields.php',        // Carbon Fields
   'lib/assets.php',               // Scripts and stylesheets
-  'lib/carbon_fields.php',        // Carbon Fields
+  'lib/extras.php',               // Custom functions
+  'lib/titles.php',               // Page titles
+  'lib/customizer.php',           // Theme customizer
   'lib/setup.php',                // Theme setup
   'lib/wrapper.php',              // Theme wrapper class
-  'lib/rest-api/woocommerce.php'  // Additions to wp-rest api from woocommerce
+  'lib/rest-api/routes.php'       // Additions to wp-rest api from woocommerce
 ];
 foreach ($fen_includes as $file) {
   if (!$filepath = locate_template($file)) {
@@ -33,24 +35,3 @@ foreach ($fen_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
-
-/*------------------------------------ TESTING ------------------------------------*/
-
-function my_awesome_func( $data ) {
-  $posts = get_posts( array(
-    'author' => $data['id'],
-  ) );
- 
-  if ( empty( $posts ) ) {
-    return 'no posts';
-  }
- 
-  return $posts[0]->post_title;
-}
-
-add_action( 'rest_api_init', function () {
-  register_rest_route( 'myplugin/v1', '/author/(?P<id>\d+)', array(
-    'methods' => 'GET',
-    'callback' => 'my_awesome_func',
-  ) );
-} );
