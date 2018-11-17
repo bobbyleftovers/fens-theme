@@ -1,10 +1,7 @@
 body{
-    background-image: url('../images/background.jpg');
-    background-size: cover;
     color: $dgrey;
     margin: 0;
-    #app.container {
-        
+    .column {
+        padding: 1.25rem;
     }
-
 }

@@ -64,6 +64,7 @@ function display_sidebar() {
  * Theme assets
  */
 function assets() {
+  wp_enqueue_style('fontawesome','https://use.fontawesome.com/releases/v5.5.0/css/all.css');
   wp_enqueue_style('sage/css', Assets\asset_path('bundle.css'), false, null);
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
