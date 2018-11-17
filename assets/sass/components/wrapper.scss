@@ -1,6 +1,11 @@
+// NOTE: Images that are used in scss files will be transpiled into the dist folder.
+// The url used here will be updated to reflect the new location.
+// Images called in templates will not bbe transpiled.
+
 body{
     color: $dgrey;
     margin: 0;
+    // background-image: url('../images/background.jpg');
     .column {
         padding: 1.25rem;
     }
